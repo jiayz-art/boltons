@@ -355,6 +355,13 @@ def test_pluralize_z():
     assert strutils.singularize('quizzes') == 'quiz'
 
 
+def test_formulae_irregular_forms():
+    assert strutils.pluralize('formula') == 'formulas'
+    assert strutils.singularize('formulae') == 'formula'
+    assert strutils.singularize('formulas') == 'formula'
+    assert strutils.singularize('FORMULAE') == 'FORMULA'
+
+
 
 def test_multi_replace_empty_mapping():
     # An empty substitution map is a no-op; previously the empty combined
